@@ -20,4 +20,10 @@ export class LoginPage {
         await expect(dashboardHeader).toHaveText('Hello ' + name);
 
     }
+
+    async goToMessagesPage(text : string)
+    {
+        await this.page.locator("a", { hasText: text }).click();
+        await expect(this.page).toHaveURL('https://qatestchallenge3.humanforce.io/WebApp/modules/messages');
+    }
 }
