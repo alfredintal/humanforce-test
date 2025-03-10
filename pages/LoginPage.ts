@@ -1,13 +1,11 @@
 import { Page, expect } from "@playwright/test";
 
 export class LoginPage {
-    constructor(private page: Page) {}
-    
+    constructor(private page: Page) {} 
     async navigate(url : string)
     {
           await this.page.goto(url);
     }
-
     async login(user: string, pass: string, name : string)
     {
         // Locate all relevant elements
@@ -20,7 +18,6 @@ export class LoginPage {
         await expect(dashboardHeader).toHaveText('Hello ' + name);
 
     }
-
     async goToMessagesPage(text : string)
     {
         await this.page.locator("a", { hasText: text }).click();

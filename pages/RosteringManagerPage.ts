@@ -2,7 +2,6 @@ import { Page, expect } from '@playwright/test';
 
 export class RosteringManagerPage {
     constructor(private page: Page) {}
-
     async navigate(substring : string)
     {
         await this.page.goto(process.env.BASE_URL! + substring);

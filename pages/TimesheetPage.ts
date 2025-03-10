@@ -1,13 +1,11 @@
 import { Page, expect } from "@playwright/test";
 
 export class TimesheetPage {
-    constructor(private page: Page) {}
-    
+    constructor(private page: Page) {}   
     async navigate()
     {
         await this.page.goto('https://qatestchallenge3.humanforce.io/TimesheetApp/modules/timesheetAdmin');
     }
-    
     async createTimesheet(userId : string)
     {
         // Create Timesheet
@@ -16,6 +14,9 @@ export class TimesheetPage {
         await this.page.locator('span', {hasText: userId}).click();
         await this.page.locator('#EmployeeSelector_Button_SelectEmployee').click();
         await this.page.locator('#TimesheetEditor_Button_SaveChanges').click();
+    }
+    async deleteTimeSheet(userId : string)
+    {
         // Check the table for a row that matches the userId, if found, click on the kebab then proceed to delete the first element returned
         // as it will be the one we just created, to handle multiple similar entries since there is no ID per timesheet that is visible, we can loop and store the nth(0)
         // data but will still be unreliable if there's no variation on the created data
