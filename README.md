@@ -41,7 +41,7 @@ npx playwright test or npm test
 
 ### ✅ **Run a Specific Test File**
 ```sh
-npx playwright test < test file >.ts
+npx playwright test or npm test < test file >.ts
 ```
 
 ### ✅ **Run Tests in Headless Mode**
