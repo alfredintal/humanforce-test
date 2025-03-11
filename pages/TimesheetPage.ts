@@ -20,7 +20,7 @@ export class TimesheetPage {
         // Check the table for a row that matches the userId, if found, click on the kebab then proceed to delete the first element returned
         // as it will be the one we just created, to handle multiple similar entries since there is no ID per timesheet that is visible, we can loop and store the nth(0)
         // data but will still be unreliable if there's no variation on the created data
-        const row = this.page.locator('table tr', { has: this.page.locator('td', { hasText: userId }).nth(0) });
+        const row = this.page.locator('table tr', { has: this.page.locator('td', { hasText: userId })}).nth(0);
         row.isVisible();
         await row.locator('div.hf-icon.hf-icon--kebab.hf-icon--size-small').click();
         await this.page.locator('span', {hasText: 'Delete'}).click();

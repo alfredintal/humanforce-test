@@ -4,6 +4,20 @@
     const isHeadless = process.env.HEADLESS !== 'false';
 
     export default defineConfig({
+      projects: [
+        {
+          name: 'Chromium',
+          use: { browserName: 'chromium' },
+        },
+        {
+          name: 'Firefox',
+          use: { browserName: 'firefox' },
+        },
+        {
+          name: 'WebKit',
+          use: { browserName: 'webkit' },
+        },
+      ],
       use: {
         headless: isHeadless,
         viewport: { width: 1280, height: 720 },
@@ -13,6 +27,7 @@
       },
       // ... other configurations
       testDir: './tests',
-      workers: 1, // Disable parallelism
+      workers: 5, // Modify parallelism
+      retries: 2, // Allow for multiple retries on failing tests
       // ... other configurations
     });
