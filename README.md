@@ -29,11 +29,6 @@ This will install:
 - Jest/Mocha test runner
 - Other required dependencies
 
-### 3️⃣ **Install Playwright Browsers**
-```sh
-npx playwright install
-```
-This ensures **Chromium, Firefox, and WebKit** browsers are available for testing.
 
 ---
 
