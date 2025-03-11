@@ -4,7 +4,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { MessagesPage } from '../pages/MessagesPage';
 dotenv.config();
 
-test('verify if userse can send messages using the Messages module', async ({page}) => {
+test('verify if users can send messages using the Messages module', async ({page}) => {
     const loginPage = new LoginPage(page);
     const msgPage = new MessagesPage(page);    
     // Login and go to Messages page
