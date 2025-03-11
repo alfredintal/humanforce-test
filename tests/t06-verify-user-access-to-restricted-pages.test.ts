@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { LoginPage } from '../pages/LoginPage';
 import { RosteringManagerPage } from '../pages/RosteringManagerPage';
 dotenv.config();
-test.use({ headless: false }); 
 
 test('verify if users are blocked if they do not have access to a page', async ({page}) => {
     const loginPage = new LoginPage(page);

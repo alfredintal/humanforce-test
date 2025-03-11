@@ -11,7 +11,7 @@ export class TimesheetPage {
         // Create Timesheet
         await this.page.locator('#TimesheetHeader_Button_CreateTimesheet').click();
         await this.page.locator('button.action-dropdown-button', {hasText: 'Timesheets from defaults'}).click();
-        await this.page.locator('span', {hasText: userId}).click();
+        await this.page.getByRole('dialog').locator('span', {hasText: userId}).click();
         await this.page.locator('#EmployeeSelector_Button_SelectEmployee').click();
         await this.page.locator('#TimesheetEditor_Button_SaveChanges').click();
     }

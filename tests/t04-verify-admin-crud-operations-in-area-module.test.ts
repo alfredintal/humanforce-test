@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { LoginPage } from '../pages/LoginPage';
 import { AreaPage } from '../pages/AreaPage';
 dotenv.config();
-test.use({ headless: false }); 
 
 test('verify admin CRUD operations in Area module', async ({page}) => {
     const loginPage = new LoginPage(page);   

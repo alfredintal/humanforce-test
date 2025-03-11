@@ -9,12 +9,8 @@ export class EmployeeManagementPage {
 
     async selectEmployeeRecord(id : string)
     {
-        const employeeRow = await this.page.locator('tr:has(td:text("MGR01"))');
-        await employeeRow.click();
-
-        const editBtn = this.page.locator('button:text("Edit")')
-        await editBtn.click();
-
+        await this.page.locator('table tr', { has: this.page.locator('td', { hasText: id }) }).click();
+        this.page.locator('button', {hasText: 'Edit'}).click();
     }
     async checkEditPermission()
     {

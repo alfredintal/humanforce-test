@@ -20,7 +20,7 @@ export class AreaPage {
     {
         // Select the first created Area
         const row = this.page.locator('table tr', { has: this.page.locator('td', { hasText: name }) });
-        await row.getByRole('button', {name: 'Edit'}).click();
+        await row.getByRole('button', {name: 'Edit'}).nth(0).click();
         await this.page.locator('#Name').fill(newName);
         await this.page.locator('#ShortName').fill('ShortName Edited');
         await this.page.locator('#ExportCode').fill('ExportCode Edited');
@@ -56,7 +56,7 @@ export class AreaPage {
         const openForm = this.page.locator('form[aria-hidden="false"]');
         await openForm.locator('input[data-bind="value:filters[0].value"]').fill(newName);
         await openForm.getByRole('button', { name: 'Filter' }).click();
-        expect(this.page.locator('table tr', { has: this.page.locator('td', { hasText: newName }) })).toBeVisible();
+        await expect(this.page.locator('table tr', { has: this.page.locator('td', { hasText: newName }) })).toBeVisible();
     }
 }
 

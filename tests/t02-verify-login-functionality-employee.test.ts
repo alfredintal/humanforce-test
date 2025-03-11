@@ -2,7 +2,6 @@ import {test, expect} from '@playwright/test';
 import dotenv from 'dotenv';
 import { LoginPage } from '../pages/LoginPage';
 dotenv.config();
-test.use({ headless: false }); 
 
 test('verify login as employee', async ({page}) => {
     // Used page-based implementation for login workflow to be resued in other tests as well

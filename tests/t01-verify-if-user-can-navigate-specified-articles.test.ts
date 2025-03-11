@@ -1,5 +1,4 @@
 import {test, expect} from '@playwright/test';
-test.use({ headless: false }); 
 
 test('Navigate to specified article', async ({page}) => {
     await page.goto('https:///www.humanforce.com');

@@ -3,9 +3,8 @@ import dotenv from 'dotenv';
 import { LoginPage } from '../pages/LoginPage';
 import { MessagesPage } from '../pages/MessagesPage';
 dotenv.config();
-test.use({ headless: false }); 
 
-test('verify admin CRUD operations in Area module', async ({page}) => {
+test('verify if userse can send messages using the Messages module', async ({page}) => {
     const loginPage = new LoginPage(page);
     const msgPage = new MessagesPage(page);    
     // Login and go to Messages page

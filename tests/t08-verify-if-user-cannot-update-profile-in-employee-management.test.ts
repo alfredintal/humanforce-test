@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { LoginPage } from '../pages/LoginPage';
 import { EmployeeManagementPage } from '../pages/EmployeeManagementPage';
 dotenv.config();
-test.use({ headless: false }); 
 
 test('verify if user cannot update their own profile in Employee Management module', async ({page}) => {
     const loginPage = new LoginPage(page);
