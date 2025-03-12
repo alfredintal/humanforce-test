@@ -1,7 +1,7 @@
     // playwright.config.ts
     import { defineConfig } from '@playwright/test';
 
-    const isHeadless = process.env.HEADLESS !== 'false';
+    const isHeadless = process.env.HEADLESS == 'false';
 
     export default defineConfig({
       projects: [

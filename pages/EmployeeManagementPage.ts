@@ -14,7 +14,14 @@ export class EmployeeManagementPage {
     }
     async checkEditPermission()
     {
+        // Assert that the no permission error banner exists
         await expect(this.page.getByText('Editing own profile You do')).toBeVisible();
+        // Assert that the user, on top of seeing the no permission error
+        await this.page.locator('div.ui-dialog-buttonset').locator('button', {hasText: 'OK'}).click();
+        // cannot actually edit the fields in the Employee Edit Page by checking 
+        // if the Save button is present which is also used to update the fields
+        // this means, regardless if there are input fields, as long as the user cannot send the request, it should not matter
+        await expect(this.page.getByRole('button', {name: 'Save'})).not.toBeVisible();
     }
     async returnToDashboard()
     {    
